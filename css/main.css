@@ -90,7 +90,6 @@ a {
   display: block;
 }
 
-/* ← use the exact blue from your PNG */
 .hero {
   position: relative;
   color: #fff;
@@ -102,7 +101,6 @@ a {
   background-size: cover; /* ← fills entire section = no seam */
 }
 
-/* subtle overlay to hide any remaining edge */
 .hero::before {
   content: "";
   position: absolute;
@@ -211,24 +209,6 @@ a {
   opacity: 1;
 }
 
-.quote {
-  max-width: 740px;
-  margin: 0 auto;
-  color: #0f172a;
-}
-.quote p {
-  font-size: 1.05rem;
-  color: #6c757d;
-}
-.quote i.fa-quote-left {
-  color: #0b5dbb;
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-.quote footer {
-  margin-top: 0.75rem;
-}
-
 .testimonials-swiper .swiper-button-prev, .testimonials-swiper .swiper-button-next {
   color: #c0cad8;
 }
@@ -255,13 +235,13 @@ a {
   padding: 36px 0;
 }
 .site-footer .socials a {
-  color: #fff;
+  color: #2c43d7;
   display: inline-flex;
   width: 36px;
   height: 36px;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgb(255, 255, 255);
   border-radius: 0.5rem;
   margin-right: 0.5rem;
 }
@@ -276,7 +256,6 @@ a {
   overflow: hidden;
 }
 
-/* ---------- Modal ---------- */
 .modal {
   position: fixed;
   inset: 0;
@@ -324,6 +303,65 @@ a {
 
 body.modal-open {
   overflow: hidden;
+}
+
+#contact.section-pad {
+  padding-bottom: 1px;
+}
+
+#contact .section-title {
+  margin-bottom: 12px;
+}
+
+.map-wrap {
+  margin-bottom: 0;
+}
+
+.site-footer {
+  margin-top: 0;
+}
+
+#contact > *:last-child {
+  margin-bottom: 0;
+}
+
+.quote--fancy {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 72px 12px;
+}
+.quote--fancy p {
+  color: #6c757d;
+  line-height: 1.7;
+  margin: 0 auto 12px;
+}
+.quote--fancy footer {
+  margin-top: 0.25rem;
+}
+
+.quote__mark {
+  position: absolute;
+  color: #0b5dbb;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.quote__mark--open {
+  left: 24px;
+  top: 64px;
+}
+
+.quote__mark--close {
+  right: 24px;
+  top: 8px;
+}
+
+.quote__mark {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
 }
 
 /*# sourceMappingURL=main.css.map */

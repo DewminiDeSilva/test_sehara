@@ -98,8 +98,8 @@
 
   <!-- ============== LATEST NEWS ============== -->
   <section id="features" class="section-pad bg-light">
-    <div class="container">
-      <h2 class="section-title text-center" data-i18n="news.title">Latest News</h2>
+    <div class="container text-center">
+      <h2 class="section-title" data-i18n="news.title">Latest News</h2>
 
       <div class="swiper news-swiper mt-4">
         <div class="swiper-wrapper">
@@ -175,13 +175,32 @@
 
       <div class="swiper testimonials-swiper mt-4">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
+          <!-- <div class="swiper-slide">
             <blockquote class="quote">
               <i class="fa-solid fa-quote-left"></i>
               <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
               <footer><strong>- Lorem ipsum dolor</strong><div class="muted">Labore et dolore</div></footer>
             </blockquote>
-          </div>
+          </div> -->
+
+          <div class="swiper-slide">
+  <blockquote class="quote quote--fancy">
+    <span class="quote__mark quote__mark--open" aria-hidden="true">“</span>
+    <span class="quote__mark quote__mark--close" aria-hidden="true">”</span>
+
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      At vero eos et accusam et justo duo dolores et ea rebum.
+    </p>
+
+    <footer>
+      <strong>- Lorem ipsum dolor</strong>
+      <div class="muted">Labore et dolore</div>
+    </footer>
+  </blockquote>
+</div>
+
           <div class="swiper-slide">
             <blockquote class="quote">
               <i class="fa-solid fa-quote-left"></i>
@@ -210,12 +229,15 @@
       <h2 class="section-title" data-i18n="contact.title">Contact Us</h2>
     </div>
 
-    <div class="map-wrap">
-      <iframe
-        class="map-frame"
-        src="https://www.google.com/maps/place/eBEYONDS+eBusiness+%26+Digital+Solutions/@6.8448212,79.9404323,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae25069caa2f53b:0xe7eae3a8b1f1214d!8m2!3d6.8448212!4d79.9404323!16s%2Fg%2F12hkt3t_k?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D"
-        allowfullscreen="" loading="lazy"></iframe>
-    </div>
+  <div class="map-wrap">
+  <iframe
+    class="map-frame"
+    src="https://maps.google.com/maps?q=6.8448212,79.9404323&z=16&output=embed"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allowfullscreen>
+  </iframe>
+</div>
   </section>
 
   <!-- ============== FOOTER ============== -->
