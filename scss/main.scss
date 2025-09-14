@@ -45,7 +45,7 @@ a { text-decoration: none; }
 .hamburger.is-active span:nth-child(2){opacity:0;}
 .hamburger.is-active span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
 
-/* slide-down mobile menu */
+// slide-down mobile menu 
 .mobile-menu{
   position:absolute; left:0; right:0; top:100%;
   background:#0a3f7d; color:#cfe1ff;

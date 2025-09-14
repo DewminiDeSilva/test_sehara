@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta -->
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Company Name — Landing</title>
+  <title>Landing page</title>
   <meta name="description" content="Responsive landing page using HTML5, SASS, ES6, Bootstrap 4 grid, and Swiper.js." />
 
-  <!-- Bootstrap 4 CSS (from node_modules) -->
+  <!-- Bootstrap 4  -->
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
-  <!-- Swiper CSS (from node_modules) -->
+  <!-- Swiper CSS  -->
   <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css" />
 
-  <!-- Optional icons for footer socials (CDN) -->
+  <!-- footer socials (CDN) and social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <!-- Your compiled CSS from SASS -->
+  <!-- linked to main.css -->
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
@@ -27,28 +27,28 @@
       <strong>Company Logo</strong>
     </a>
 
-    <!-- Desktop nav: only on lg+ (≥992px) -->
+    <!-- navbar -->
     <nav class="nav-links d-none d-lg-flex">
       <a href="#about" data-i18n="nav.about">About Us</a>
       <a href="#features" data-i18n="nav.features">Features</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
 
-    <!-- Lang: only on lg+ -->
+    <!-- Language switcher -->
     <div class="lang-switcher d-none d-lg-flex align-items-center">
       <i class="fa-solid fa-globe mr-2"></i>
       <button class="btn btn-sm btn-outline-light mx-1" data-lang="en">EN</button>
       <button class="btn btn-sm btn-outline-light mx-1" data-lang="en_formal">EN (Formal)</button>
     </div>
 
-    <!-- Hamburger: only below lg -->
+    <!-- Hamburger -->
     <button id="hamburger" class="hamburger d-inline-flex d-lg-none"
             aria-label="Toggle Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 
-  <!-- Mobile menu: only below lg -->
+  <!-- Mobile menu -->
   <nav id="mobileMenu" class="mobile-menu d-lg-none">
     <a href="#about"    class="mobile-link" data-i18n="nav.about">About Us</a>
     <a href="#features" class="mobile-link" data-i18n="nav.features">Features</a>
@@ -60,10 +60,6 @@
   </nav>
 </header>
 
-
-
-
-  <!-- ============== HERO ============== -->
   <section class="hero">
     <div class="container">
       <div class="row align-items-center">
@@ -71,7 +67,7 @@
         <div class="col-md-6 hero-copy">
           <h1 data-i18n="hero.title">Welcome to<br>our company...</h1>
           <p class="lead" data-i18n="hero.subtitle">
-          We help businesses turn ideas into real results—combining modern tech, clear strategy, and friendly support so you can launch faster, grow smarter, and delight your customers.
+          We help businesses turn ideas into real results combining modern tech, clear strategy, and friendly support so you can launch faster, grow smarter, and delight your customers.
           </p>
           <div class="hero-ctas">
             <a href="#about" class="btn btn-light btn-lg mr-2" data-i18n="hero.cta.learn">Learn more</a>
@@ -87,7 +83,7 @@
     <div class="hero-decor"></div>
   </section>
 
-  <!-- ============== ABOUT ============== -->
+  <!-- ABOUT -->
   <section id="about" class="section-pad">
     <div class="container text-center">
       <h2 class="section-title" data-i18n="about.title">About Us</h2>
@@ -97,7 +93,7 @@
     </div>
   </section>
 
-  <!-- ============== LATEST NEWS ============== -->
+  <!-- LATEST NEWS -->
   <section id="features" class="section-pad bg-light">
     <div class="container text-center">
       <h2 class="section-title" data-i18n="news.title">Latest News</h2>
@@ -105,14 +101,14 @@
       <div class="swiper news-swiper mt-4">
         <div class="swiper-wrapper">
 
-         <!-- Card 1 -->
+         <!-- News Card 1 -->
 <article class="swiper-slide news-card">
   <img src="img/img2.png" alt="" class="news-img">
   <div class="news-body">
-    <!-- title for modal -->
+  
     <span class="sr-only news-title" data-i18n="news.items.0.title">ProductCon London recap</span>
 
-    <!-- short preview on the card -->
+  
     <p class="news-text line-clamp" data-i18n="news.items.0.preview">
       Highlights from our talk at ProductCon London…
     </p>
@@ -165,7 +161,7 @@
     </div>
   </section>
 
-  <!-- ============== TESTIMONIALS ============== -->
+  <!--  TESTIMONIALS  -->
   <section class="section-pad">
     <div class="container text-center">
       <h2 class="section-title" data-i18n="testimonials.title">Testimonials</h2>
@@ -227,7 +223,7 @@
     </div>
   </section>
 
-  <!-- ============== CONTACT + MAP ============== -->
+  <!-- CONTACT and MAP  -->
   <section id="contact" class="section-pad">
     <div class="container text-center">
       <h2 class="section-title" data-i18n="contact.title">Contact Us</h2>
@@ -244,7 +240,7 @@
 </div>
   </section>
 
-  <!-- ============== FOOTER ============== -->
+  <!-- FOOTER  -->
   <footer class="site-footer">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
       <div class="footer-left">
@@ -277,7 +273,7 @@
     </div>
   </footer>
 
-    <!-- ============== MODAL (for news) ============== -->
+    <!--  MODAL (for news)  -->
 <div id="newsModal" class="modal" aria-hidden="true">
   <div class="modal__overlay" data-dismiss="modal" tabindex="-1"></div>
 

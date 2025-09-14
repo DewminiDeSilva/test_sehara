@@ -167,7 +167,7 @@ const testimonialsSwiper = new Swiper('.testimonials-swiper', {
 setupLangButtons(document);
 applyI18n(localStorage.getItem('lang') || 'en');
 
-// ===== News modal (vanilla ES6) =====
+// News modal
 const modal = document.getElementById('newsModal');
 const modalTitleEl = document.getElementById('newsModalTitle');
 const modalContentEl = document.getElementById('newsModalContent');

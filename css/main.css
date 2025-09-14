@@ -87,7 +87,6 @@ a {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* slide-down mobile menu */
 .mobile-menu {
   position: absolute;
   left: 0;
