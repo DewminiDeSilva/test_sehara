@@ -1,0 +1,22 @@
+{
+  "name": "test_sehara",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "sass:build": "sass scss/main.scss css/main.css",
+    "sass:watch": "sass --watch scss/main.scss css/main.css",
+    "start": "live-server --open=index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.92.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.2",
+    "swiper": "^12.0.1"
+  }
+}

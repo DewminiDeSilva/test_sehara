@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Company Name — Landing</title>
+  <meta name="description" content="Responsive landing page using HTML5, SASS, ES6, Bootstrap 4 grid, and Swiper.js." />
+
+  <!-- Bootstrap 4 CSS (from node_modules) -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- Swiper CSS (from node_modules) -->
+  <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css" />
+
+  <!-- Optional icons for footer socials (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Your compiled CSS from SASS -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <!-- ============== NAVBAR ============== -->
+  <header class="site-header">
+    <div class="container d-flex align-items-center justify-content-between py-3">
+      <a href="#" class="brand d-flex align-items-center">
+        <span class="logo-circle mr-2"></span>
+        <strong>Company Logo</strong>
+      </a>
+
+      <nav class="d-none d-md-flex nav-links">
+        <a href="#about"    data-i18n="nav.about">About Us</a>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#contact"  data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <!-- Language (English variants only to satisfy “language switcher” requirement) -->
+      <div class="d-none d-md-flex align-items-center lang-switcher">
+        <i class="fa-solid fa-globe mr-2"></i>
+        <button class="btn btn-sm btn-outline-light mx-1" data-lang="en">EN</button>
+        <button class="btn btn-sm btn-outline-light mx-1" data-lang="en_formal">EN (Formal)</button>
+      </div>
+
+      <!-- Hamburger for mobile -->
+      <button id="hamburger" class="hamburger d-md-none" aria-label="Toggle Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav id="mobileMenu" class="mobile-menu d-md-none">
+      <a href="#about"    class="mobile-link" data-i18n="nav.about">About Us</a>
+      <a href="#features" class="mobile-link" data-i18n="nav.features">Features</a>
+      <a href="#contact"  class="mobile-link" data-i18n="nav.contact">Contact</a>
+      <div class="mobile-lang mt-3">
+        <button class="btn btn-sm btn-outline-secondary mx-1" data-lang="en">EN</button>
+        <button class="btn btn-sm btn-outline-secondary mx-1" data-lang="en_formal">EN (Formal)</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============== HERO ============== -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left -->
+        <div class="col-md-6 hero-copy">
+          <h1 data-i18n="hero.title">Welcome to<br>our company...</h1>
+          <p class="lead" data-i18n="hero.subtitle">
+            Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor
+            invidunt ut labore et dolore magna aliquyam erat,
+          </p>
+          <div class="hero-ctas">
+            <a href="#about" class="btn btn-light btn-lg mr-2" data-i18n="hero.cta.learn">Learn more</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg" data-i18n="hero.cta.contact">Contact</a>
+          </div>
+        </div>
+        <!-- Right -->
+        <!-- <div class="col-md-6 text-center mt-4 mt-md-0">
+          <img src="img/Hero Banner.png" alt="Analytics illustration" class="img-fluid hero-image">
+        </div> -->
+      </div>
+    </div>
+    <div class="hero-decor"></div>
+  </section>
+
+  <!-- ============== ABOUT ============== -->
+  <section id="about" class="section-pad">
+    <div class="container text-center">
+      <h2 class="section-title" data-i18n="about.title">About Us</h2>
+      <p class="section-text mx-auto" data-i18n="about.text">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+      </p>
+    </div>
+  </section>
+
+  <!-- ============== LATEST NEWS ============== -->
+  <section id="features" class="section-pad bg-light">
+    <div class="container">
+      <h2 class="section-title text-center" data-i18n="news.title">Latest News</h2>
+
+      <div class="swiper news-swiper mt-4">
+        <div class="swiper-wrapper">
+          <article class="swiper-slide news-card">
+            <img src="https://picsum.photos/seed/uk/640/360" alt="" class="news-img">
+            <div class="news-body">
+              <p class="news-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr…</p>
+              <a href="#" class="news-read" data-i18n="news.read">Read</a>
+            </div>
+          </article>
+
+          <article class="swiper-slide news-card">
+            <img src="https://picsum.photos/seed/product/640/360" alt="" class="news-img">
+            <div class="news-body">
+              <p class="news-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr…</p>
+              <a href="#" class="news-read" data-i18n="news.read">Read</a>
+            </div>
+          </article>
+
+          <article class="swiper-slide news-card">
+            <img src="https://picsum.photos/seed/office/640/360" alt="" class="news-img">
+            <div class="news-body">
+              <p class="news-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr…</p>
+              <a href="#" class="news-read" data-i18n="news.read">Read</a>
+            </div>
+          </article>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== TESTIMONIALS ============== -->
+  <section class="section-pad">
+    <div class="container text-center">
+      <h2 class="section-title" data-i18n="testimonials.title">Testimonials</h2>
+
+      <div class="swiper testimonials-swiper mt-4">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <blockquote class="quote">
+              <i class="fa-solid fa-quote-left"></i>
+              <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
+              <footer><strong>- Lorem ipsum dolor</strong><div class="muted">Labore et dolore</div></footer>
+            </blockquote>
+          </div>
+          <div class="swiper-slide">
+            <blockquote class="quote">
+              <i class="fa-solid fa-quote-left"></i>
+              <p>Stet clita kasd gubergren, no sea takimata sanctus est.</p>
+              <footer><strong>- Jane Doe</strong><div class="muted">Product Manager</div></footer>
+            </blockquote>
+          </div>
+          <div class="swiper-slide">
+            <blockquote class="quote">
+              <i class="fa-solid fa-quote-left"></i>
+              <p>No sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+              <footer><strong>- John Smith</strong><div class="muted">Founder</div></footer>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CONTACT + MAP ============== -->
+  <section id="contact" class="section-pad">
+    <div class="container text-center">
+      <h2 class="section-title" data-i18n="contact.title">Contact Us</h2>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        class="map-frame"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.953!2d-80.842!3d35.227!5e0!3m2!1sen!2s!4v1700000000000"
+        allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
+      <div class="footer-left">
+        <div class="brand d-flex align-items-center mb-2">
+          <span class="logo-circle mr-2"></span>
+          <strong>Company Logo</strong>
+        </div>
+        <address class="mb-1">
+          Keas 69 Str, 15234, East Nile<br>
+          Athens, Greece<br>
+          +249 9123 456 78<br>
+          +249 9123 456 78
+        </address>
+        <small class="muted">&copy; <span id="year"></span> Reserved by Company Name Limited.</small>
+      </div>
+
+      <div class="footer-right mt-4 mt-md-0">
+        <div class="mb-2" data-i18n="footer.stay">Stay connected with</div>
+        <div class="socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="mt-3">
+          <small class="muted">Published: <span id="published">March 05, 2024</span></small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS (from node_modules) -->
+  <script src="node_modules/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Your ES6 module -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
