@@ -37,6 +37,11 @@ test_name/
 └─ node_modules/          # bootstrap, swiper (when using Node)
 # Landing Page – Assignment
 
+----------Running the Project---------
+
+Open index.html directly in a browser, or
+
+With Node: npm install → npm run sass:build (or npm run sass:watch) → open with Live Server.
 ---------Associate Web Developer Test  - Landing page--------
 
 A responsive, single-page company landing site built to the assignment specs:
@@ -74,3 +79,9 @@ test_name/
 │  └─ main.js             # ES6 code (i18n, menu, sliders, modal)
 ├─ img/                   # images (hero-bg, news, etc.)
 └─ node_modules/          # bootstrap, swiper (when using Node)
+
+----------Running the Project---------
+
+Open index.html directly in a browser, or
+
+With Node: npm install → npm run sass:build (or npm run sass:watch) → open with Live Server.
