@@ -20,44 +20,48 @@
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-  <!-- ============== NAVBAR ============== -->
   <header class="site-header">
-    <div class="container d-flex align-items-center justify-content-between py-3">
-      <a href="#" class="brand d-flex align-items-center">
-        <span class="logo-circle mr-2"></span>
-        <strong>Company Logo</strong>
-      </a>
+  <div class="container d-flex align-items-center justify-content-between py-3">
+    <a href="#" class="brand d-flex align-items-center">
+      <span class="logo-circle mr-2"></span>
+      <strong>Company Logo</strong>
+    </a>
 
-      <nav class="d-none d-md-flex nav-links">
-        <a href="#about"    data-i18n="nav.about">About Us</a>
-        <a href="#features" data-i18n="nav.features">Features</a>
-        <a href="#contact"  data-i18n="nav.contact">Contact</a>
-      </nav>
+    <!-- Desktop nav: only on lg+ (≥992px) -->
+    <nav class="nav-links d-none d-lg-flex">
+      <a href="#about" data-i18n="nav.about">About Us</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
 
-      <!-- Language (English variants only to satisfy “language switcher” requirement) -->
-      <div class="d-none d-md-flex align-items-center lang-switcher">
-        <i class="fa-solid fa-globe mr-2"></i>
-        <button class="btn btn-sm btn-outline-light mx-1" data-lang="en">EN</button>
-        <button class="btn btn-sm btn-outline-light mx-1" data-lang="en_formal">EN (Formal)</button>
-      </div>
-
-      <!-- Hamburger for mobile -->
-      <button id="hamburger" class="hamburger d-md-none" aria-label="Toggle Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+    <!-- Lang: only on lg+ -->
+    <div class="lang-switcher d-none d-lg-flex align-items-center">
+      <i class="fa-solid fa-globe mr-2"></i>
+      <button class="btn btn-sm btn-outline-light mx-1" data-lang="en">EN</button>
+      <button class="btn btn-sm btn-outline-light mx-1" data-lang="en_formal">EN (Formal)</button>
     </div>
 
-    <!-- Mobile menu -->
-    <nav id="mobileMenu" class="mobile-menu d-md-none">
-      <a href="#about"    class="mobile-link" data-i18n="nav.about">About Us</a>
-      <a href="#features" class="mobile-link" data-i18n="nav.features">Features</a>
-      <a href="#contact"  class="mobile-link" data-i18n="nav.contact">Contact</a>
-      <div class="mobile-lang mt-3">
-        <button class="btn btn-sm btn-outline-secondary mx-1" data-lang="en">EN</button>
-        <button class="btn btn-sm btn-outline-secondary mx-1" data-lang="en_formal">EN (Formal)</button>
-      </div>
-    </nav>
-  </header>
+    <!-- Hamburger: only below lg -->
+    <button id="hamburger" class="hamburger d-inline-flex d-lg-none"
+            aria-label="Toggle Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu: only below lg -->
+  <nav id="mobileMenu" class="mobile-menu d-lg-none">
+    <a href="#about"    class="mobile-link" data-i18n="nav.about">About Us</a>
+    <a href="#features" class="mobile-link" data-i18n="nav.features">Features</a>
+    <a href="#contact"  class="mobile-link" data-i18n="nav.contact">Contact</a>
+    <div class="mobile-lang mt-3">
+      <button class="btn btn-sm btn-outline-secondary mx-1" data-lang="en">EN</button>
+      <button class="btn btn-sm btn-outline-secondary mx-1" data-lang="en_formal">EN (Formal)</button>
+    </div>
+  </nav>
+</header>
+
+
+
 
   <!-- ============== HERO ============== -->
   <section class="hero">
@@ -67,8 +71,7 @@
         <div class="col-md-6 hero-copy">
           <h1 data-i18n="hero.title">Welcome to<br>our company...</h1>
           <p class="lead" data-i18n="hero.subtitle">
-            Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor
-            invidunt ut labore et dolore magna aliquyam erat,
+          We help businesses turn ideas into real results—combining modern tech, clear strategy, and friendly support so you can launch faster, grow smarter, and delight your customers.
           </p>
           <div class="hero-ctas">
             <a href="#about" class="btn btn-light btn-lg mr-2" data-i18n="hero.cta.learn">Learn more</a>
@@ -89,9 +92,7 @@
     <div class="container text-center">
       <h2 class="section-title" data-i18n="about.title">About Us</h2>
       <p class="section-text mx-auto" data-i18n="about.text">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+        e’re a team of designers, engineers, and strategists who turn ideas into practical digital products. We focus on clear communication, thoughtful design, and reliable engineering so your business can launch faster and grow with confidence. From discovery to delivery, we work as partners—measuring results and improving continuously.
       </p>
     </div>
   </section>
@@ -103,65 +104,61 @@
 
       <div class="swiper news-swiper mt-4">
         <div class="swiper-wrapper">
-          <article class="swiper-slide news-card" data-title="Product Launch in London">
-         <img src="img/img2.png" alt="" class="news-img">
-          <div class="news-body">
-    <!-- SHORT preview (clamped to 3 lines on card) -->
-    <p class="news-text line-clamp">
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr…
+
+         <!-- Card 1 -->
+<article class="swiper-slide news-card">
+  <img src="img/img2.png" alt="" class="news-img">
+  <div class="news-body">
+    <!-- title for modal -->
+    <span class="sr-only news-title" data-i18n="news.items.0.title">ProductCon London recap</span>
+
+    <!-- short preview on the card -->
+    <p class="news-text line-clamp" data-i18n="news.items.0.preview">
+      Highlights from our talk at ProductCon London…
     </p>
 
-    <!-- FULL content (hidden, shown in modal) -->
-    <div class="news-full" hidden>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-      invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-      et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>
-      <p>More details, images, lists, etc. can go here.</p>
+    <!-- full article for the modal -->
+    <div class="news-full" data-i18n="news.items.0.full" hidden>
+      <p>We shared how small, high-leverage changes in onboarding improved activation by 18%.</p>
+      <p>The slides and recording are available for registered attendees.</p>
     </div>
 
     <a href="#" class="news-read" data-i18n="news.read">Read</a>
   </div>
 </article>
 
-
-          <article class="swiper-slide news-card">
-            <img src="img/img3.png" alt="" class="news-img">
-            <div class="news-body">
-              <!-- SHORT preview (clamped to 3 lines on card) -->
-    <p class="news-text line-clamp">
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr…
+<!-- Card 2 -->
+<article class="swiper-slide news-card">
+  <img src="img/img3.png" alt="" class="news-img">
+  <div class="news-body">
+    <span class="sr-only news-title" data-i18n="news.items.1.title">New workspace opens</span>
+    <p class="news-text line-clamp" data-i18n="news.items.1.preview">
+      We’ve opened a new collaboration space to support our growing team…
     </p>
-
-    <!-- FULL content (hidden, shown in modal) -->
-    <div class="news-full" hidden>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-      invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-      et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>
-      <p>More details, images, lists, etc. can go here.</p>
+    <div class="news-full" data-i18n="news.items.1.full" hidden>
+      <p>The hub includes dedicated rooms for research interviews and hands-on testing.</p>
+      <p>Tours are available by appointment.</p>
     </div>
-
     <a href="#" class="news-read" data-i18n="news.read">Read</a>
-            </div>
-          </article>
+  </div>
+</article>
 
-          <article class="swiper-slide news-card">
-            <img src="img/img1.png" alt="" class="news-img">
-            <div class="news-body">
-               <!-- SHORT preview (clamped to 3 lines on card) -->
-    <p class="news-text line-clamp">
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr…
+<!-- Card 3 -->
+<article class="swiper-slide news-card">
+  <img src="img/img1.png" alt="" class="news-img">
+  <div class="news-body">
+    <span class="sr-only news-title" data-i18n="news.items.2.title">Quarterly results</span>
+    <p class="news-text line-clamp" data-i18n="news.items.2.preview">
+      Q2 highlights: performance, customer stories, and what’s next…
     </p>
-
-    <!-- FULL content (hidden, shown in modal) -->
-    <div class="news-full" hidden>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-      invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-      et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>
-      <p>More details, images, lists, etc. can go here.</p>
+    <div class="news-full" data-i18n="news.items.2.full" hidden>
+      <p>We delivered improved reliability and faster release cycles across core products.</p>
+      <p>Read the full report for metrics and upcoming roadmap items.</p>
     </div>
-              <a href="#" class="news-read" data-i18n="news.read">Read</a>
-            </div>
-          </article>
+    <a href="#" class="news-read" data-i18n="news.read">Read</a>
+  </div>
+</article>
+
         </div>
         <div class="swiper-pagination"></div>
       </div>
@@ -182,39 +179,46 @@
               <footer><strong>- Lorem ipsum dolor</strong><div class="muted">Labore et dolore</div></footer>
             </blockquote>
           </div> -->
-
-          <div class="swiper-slide">
+<div class="swiper-slide">
   <blockquote class="quote quote--fancy">
     <span class="quote__mark quote__mark--open" aria-hidden="true">“</span>
     <span class="quote__mark quote__mark--close" aria-hidden="true">”</span>
 
-    <p>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    <p data-i18n="testimonials.items.0.text">
       At vero eos et accusam et justo duo dolores et ea rebum.
     </p>
-
     <footer>
-      <strong>- Lorem ipsum dolor</strong>
-      <div class="muted">Labore et dolore</div>
+      <strong data-i18n="testimonials.items.0.author">- Lorem ipsum dolor</strong>
+      <div class="muted" data-i18n="testimonials.items.0.role">Labore et dolore</div>
     </footer>
   </blockquote>
 </div>
 
-          <div class="swiper-slide">
-            <blockquote class="quote">
-              <i class="fa-solid fa-quote-left"></i>
-              <p>Stet clita kasd gubergren, no sea takimata sanctus est.</p>
-              <footer><strong>- Jane Doe</strong><div class="muted">Product Manager</div></footer>
-            </blockquote>
-          </div>
-          <div class="swiper-slide">
-            <blockquote class="quote">
-              <i class="fa-solid fa-quote-left"></i>
-              <p>No sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-              <footer><strong>- John Smith</strong><div class="muted">Founder</div></footer>
-            </blockquote>
-          </div>
+<div class="swiper-slide">
+  <blockquote class="quote quote--fancy">
+    <span class="quote__mark quote__mark--open" aria-hidden="true">“</span>
+    <span class="quote__mark quote__mark--close" aria-hidden="true">”</span>
+
+    <p data-i18n="testimonials.items.1.text">Stet clita kasd gubergren…</p>
+    <footer>
+      <strong data-i18n="testimonials.items.1.author">- Jane Doe</strong>
+      <div class="muted" data-i18n="testimonials.items.1.role">Product Manager</div>
+    </footer>
+  </blockquote>
+</div>
+
+<div class="swiper-slide">
+  <blockquote class="quote quote--fancy">
+    <span class="quote__mark quote__mark--open" aria-hidden="true">“</span>
+    <span class="quote__mark quote__mark--close" aria-hidden="true">”</span>
+
+    <p data-i18n="testimonials.items.2.text">No sea takimata sanctus est…</p>
+    <footer>
+      <strong data-i18n="testimonials.items.2.author">- John Smith</strong>
+      <div class="muted" data-i18n="testimonials.items.2.role">Founder</div>
+    </footer>
+  </blockquote>
+</div>
         </div>
 
         <div class="swiper-button-prev"></div>

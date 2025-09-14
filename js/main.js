@@ -5,14 +5,41 @@ const i18n = {
     'nav.features': 'Features',
     'nav.contact': 'Contact',
     'hero.title': 'Welcome to\nour company...',
-    'hero.subtitle': 'Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,',
+    'hero.subtitle': 'We help businesses turn ideas into real resultscombining modern tech, clear strategy, and friendly support so you can launch faster, grow smarter, and delight your customers',
     'hero.cta.learn': 'Learn more',
     'hero.cta.contact': 'Contact',
     'about.title': 'About Us',
-    'about.text': 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est',
+    'about.text': 'We’re a team of designers, engineers, and strategists who turn ideas into practical digital products. We focus on clear communication, thoughtful design, and reliable engineering so your business can launch faster and grow with confidence. From discovery to delivery, we work as partners—measuring results and improving continuously.',
     'news.title': 'Latest News',
+     'news.read': 'Read',
+
+    'news.items.0.title':   'ProductCon London recap',
+    'news.items.0.preview': 'Highlights from our talk at ProductCon London…',
+    'news.items.0.full':    '<p>We shared how small, high-leverage changes in onboarding improved activation by 18%.</p><p>The slides and recording are available for registered attendees.</p>',
+
+    'news.items.1.title':   'New workspace opens',
+    'news.items.1.preview': 'We’ve opened a new collaboration space to support our growing team…',
+    'news.items.1.full':    '<p>The hub includes dedicated rooms for research interviews and hands-on testing.</p><p>Tours are available by appointment.</p>',
+
+    'news.items.2.title':   'Quarterly results',
+    'news.items.2.preview': 'Q2 highlights: performance, customer stories, and what’s next…',
+    'news.items.2.full':    '<p>We delivered improved reliability and faster release cycles across core products.</p><p>Read the full report for metrics and upcoming roadmap items.</p>',
     'news.read': 'Read',
     'testimonials.title': 'Testimonials',
+     'testimonials.items.0.text':
+      'Working with this team turned our ideas into reality fast. Clear communication, solid engineering, and measurable results.',
+    'testimonials.items.0.author': '- Sarah Bennett',
+    'testimonials.items.0.role': 'Head of Operations',
+
+    'testimonials.items.1.text':
+      'The product quality and support have been excellent. We launched on time and saw improvements from day one.',
+    'testimonials.items.1.author': '- Daniel Ruiz',
+    'testimonials.items.1.role': 'Product Manager',
+
+    'testimonials.items.2.text':
+      'Reliable, professional, and easy to work with. They simplified our processes and helped us scale confidently.',
+    'testimonials.items.2.author': '- Priya Nair',
+    'testimonials.items.2.role': 'Founder & CEO',
     'contact.title': 'Contact Us',
     'footer.stay': 'Stay connected with'
   },
@@ -25,10 +52,35 @@ const i18n = {
     'hero.cta.learn': 'Learn more',
     'hero.cta.contact': 'Contact',
     'about.title': 'About Us',
-    'about.text': 'We deliver value through reliable products and a customer-first approach, focusing on quality and continuous improvement.',
+    'about.text': 'We are a multidisciplinary team delivering reliable, scalable digital solutions. Our approach combines rigorous discovery, user-centered design, and robust engineering to accelerate delivery and reduce risk. We collaborate closely with stakeholders from inception to launch, ensuring measurable outcomes and long-term value.',
     'news.title': 'Latest News',
+     'news.items.0.title':   'ProductCon London — Summary',
+    'news.items.0.preview': 'Key insights from our presentation at ProductCon London…',
+    'news.items.0.full':    '<p>Our presentation outlined targeted improvements to onboarding that yielded an 18% increase in activation.</p><p>Slide materials and the session recording are available to registered participants.</p>',
+
+    'news.items.1.title':   'Opening of New Workspace',
+    'news.items.1.preview': 'We have inaugurated a new collaboration space to accommodate team growth…',
+    'news.items.1.full':    '<p>The facility provides dedicated rooms for research interviews and usability testing.</p><p>Guided visits may be arranged upon request.</p>',
+
+    'news.items.2.title':   'Quarterly Results',
+    'news.items.2.preview': 'Q2 summary: performance achievements, client highlights, and forthcoming initiatives…',
+    'news.items.2.full':    '<p>We delivered improved system reliability and accelerated release cadence across core offerings.</p><p>The complete report includes detailed metrics and the upcoming roadmap.</p>',
     'news.read': 'Read',
     'testimonials.title': 'Testimonials',
+     'testimonials.items.0.text':
+      'The team demonstrated exemplary professionalism—translating our requirements into a robust solution with clear reporting and timely delivery.',
+    'testimonials.items.0.author': '- Sarah Bennett',
+    'testimonials.items.0.role': 'Head of Operations',
+
+    'testimonials.items.1.text':
+      'Product quality and support have been consistently superior. Milestones were met as scheduled, and performance gains were immediate.',
+    'testimonials.items.1.author': '- Daniel Ruiz',
+    'testimonials.items.1.role': 'Product Manager',
+
+    'testimonials.items.2.text':
+      'Engagement was conducted with diligence and precision. Our workflows were streamlined, enabling sustainable growth.',
+    'testimonials.items.2.author': '- Priya Nair',
+    'testimonials.items.2.role': 'Founder & CEO',
     'contact.title': 'Contact Us',
     'footer.stay': 'Stay connected with'
   }
@@ -54,13 +106,25 @@ function setupLangButtons(scope = document) {
 // Hamburger
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-if (hamburger && mobileMenu) {
-  hamburger.addEventListener('click', () => {
-    const active = hamburger.classList.toggle('is-active');
-    hamburger.setAttribute('aria-expanded', active ? 'true' : 'false');
-    mobileMenu.classList.toggle('show');
-  });
+
+function closeMenu(){
+  hamburger.classList.remove('is-active');
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded','false');
+  document.body.classList.remove('menu-open');
 }
+
+if (hamburger && mobileMenu){
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('is-active');
+    mobileMenu.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.classList.toggle('menu-open', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+}
+
 
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
@@ -75,6 +139,18 @@ const newsSwiper = new Swiper('.news-swiper', {
     992: { slidesPerView: 3 }
   },
   pagination: { el: '.news-swiper .swiper-pagination', clickable: true }
+});
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.news-read');
+  if (!btn) return;
+  e.preventDefault();
+
+  const card = btn.closest('.news-card');
+  const title = card?.querySelector('.news-title')?.textContent?.trim() || 'News';
+  const fullHTML = card?.querySelector('.news-full')?.innerHTML
+                || `<p>${card?.querySelector('.news-text')?.textContent || ''}</p>`;
+  openModal(title, fullHTML);
 });
 
 // Swiper: Testimonials

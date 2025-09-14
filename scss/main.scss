@@ -31,20 +31,36 @@ a { text-decoration: none; }
 .logo-circle { width: 28px; height: 28px; border-radius: 50%; background: #fff; }
 
 // Hamburger
-.hamburger {
-  width: 44px; height: 40px; border: 1px solid rgba(255,255,255,.4); border-radius: .75rem; background: transparent;
-  display: inline-flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px;
-  span { width: 20px; height: 2px; background: #fff; display: block; transition: transform .25s, opacity .25s; }
-  &.is-active {
-    span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    span:nth-child(2) { opacity: 0; }
-    span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  }
+.site-header { position: sticky; top: 0; z-index: 1000; }
+
+/* hamburger button visual + X animation */
+.hamburger{
+  width:44px;height:40px;border:1px solid rgba(255,255,255,.4);
+  border-radius:.75rem;background:transparent;cursor:pointer;
+  display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;
+  z-index: 1100;
 }
-.mobile-menu { display: none; background: #0a3f7d; padding: .75rem 1rem 1rem;
-  .mobile-link { display: block; color: #cfe1ff; padding: .5rem 0; }
+.hamburger span{width:22px;height:2px;background:#fff;transition:transform .25s,opacity .25s;}
+.hamburger.is-active span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+.hamburger.is-active span:nth-child(2){opacity:0;}
+.hamburger.is-active span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+
+/* slide-down mobile menu */
+.mobile-menu{
+  position:absolute; left:0; right:0; top:100%;
+  background:#0a3f7d; color:#cfe1ff;
+  max-height:0; overflow:hidden;
+  padding:0 1rem; border-bottom:1px solid rgba(255,255,255,.15);
+  transition:max-height .25s ease;
+  z-index: 1050;
 }
-.mobile-menu.show { display: block; }
+.mobile-menu.open{ max-height:320px; padding-bottom:1rem; }
+.mobile-link{ display:block; color:#cfe1ff; padding:.65rem 0; }
+.mobile-link:hover{ color:#fff; text-decoration:none; }
+
+body.menu-open{ overflow:hidden; }
+
+
 
 // Hero 
 $heroFill: #0b6fae; 
