@@ -90,3 +90,52 @@ const testimonialsSwiper = new Swiper('.testimonials-swiper', {
 // Boot
 setupLangButtons(document);
 applyI18n(localStorage.getItem('lang') || 'en');
+
+// ===== News modal (vanilla ES6) =====
+const modal = document.getElementById('newsModal');
+const modalTitleEl = document.getElementById('newsModalTitle');
+const modalContentEl = document.getElementById('newsModalContent');
+let lastFocusedEl = null;
+
+function openModal(title, html) {
+  lastFocusedEl = document.activeElement;
+  modalTitleEl.textContent = title || 'News';
+  modalContentEl.innerHTML = html || '';
+  modal.classList.add('open');
+  document.body.classList.add('modal-open');
+  modal.querySelector('.modal__close').focus();
+}
+
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.classList.remove('modal-open');
+  if (lastFocusedEl) lastFocusedEl.focus();
+}
+
+// Open on "Read" click
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.news-read');
+  if (!btn) return;
+
+  e.preventDefault();
+  const card = btn.closest('.news-card');
+  const title = (card && card.dataset.title) || 'News';
+
+  // Prefer hidden full content; fallback to preview text
+  const fullHTML = card?.querySelector('.news-full')?.innerHTML
+                || `<p>${card?.querySelector('.news-text')?.textContent || ''}</p>`;
+
+  openModal(title, fullHTML);
+});
+
+// Close on overlay / close button
+modal.addEventListener('click', (e) => {
+  if (e.target.matches('[data-dismiss="modal"], .modal__overlay, .modal__close')) {
+    closeModal();
+  }
+});
+
+// Close on ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+});

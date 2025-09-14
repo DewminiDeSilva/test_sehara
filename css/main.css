@@ -269,4 +269,61 @@ a {
   background: rgba(255, 255, 255, 0.25);
 }
 
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---------- Modal ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 1050;
+}
+
+.modal.open {
+  display: block;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal__dialog {
+  position: relative;
+  background: #fff;
+  color: #0f172a;
+  width: min(720px, 92vw);
+  max-height: 80vh;
+  overflow: auto;
+  margin: 10vh auto 0;
+  border-radius: 1rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.modal__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  border: 0;
+  background: transparent;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal__content p {
+  margin-bottom: 0.75rem;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
 /*# sourceMappingURL=main.css.map */
